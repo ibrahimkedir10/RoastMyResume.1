@@ -1,0 +1,101 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+    <div>
+        <h1>User Profile</h1>
+    </div>
+
+    <div>
+        <!-- User Name Input -->
+        <input type="text" id="txtName" placeholder="Enter your name" />
+    </div>
+
+    <div>
+        <!-- Photo Upload -->
+       
+        <input type="file" id="txtFile" value="Upload File" />
+    </div>
+
+    <div>
+        <!-- File Upload Text -->
+        <p>Upload a photo:</p>
+    </div>
+
+    <div>
+        <!-- Image Viewer -->
+        <img id="imgViewer" alt="User Photo" width="200" height="200" />
+    </div>
+
+    <div>
+        <!-- Save and Read Buttons -->
+        <button id="btnSave" class="btn btn-primary">Save</button>
+        <button id="btnRead" class="btn btn-drager">Read</button>
+    </div>
+
+    <!-- Include jQuery -->
+    <script src="~/jquery/jquery.min.js"></script>
+
+    <!-- JavaScript Code -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Update image preview when selecting a file
+            $("#txtFile").change(function (event) {
+                var files = event.target.files;
+                $("#imgViewer").attr("src", window.URL.createObjectURL(files[0]));
+            });
+
+            // Handle Save button click
+            $("#btnSave").click(function () {
+                var files = $("#txtFile")[0].files;
+                var formData = new FormData();
+
+                for (var i = 0; i < files.length; i++) {
+                    formData.append("file", files[i]);
+                }
+
+                var oUser = {
+                    Name: $("#txtName").val()
+                };
+
+                formData.append("User", JSON.stringify(oUser));
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Home/SaveFile", // Correct the URL path if necessary
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        ResetFields();
+                        alert(data);
+                    },
+                    error: function (data) {
+                        console.log('Error:', data);
+                    }
+                });
+            });
+
+            // Handle Read button click
+            $("#btnRead").click(function () {
+                $.ajax({
+                    type: "GET",
+                    url: "/Home/GetSavedUser",
+                    success: function (data) {
+                        $("#txtName").val(data.Name);
+                        $('#imgViewer').attr('src', "data:image/jpg;base64," + data.Photo);
+                    },
+                    error: function (data) {
+                        console.log('Error:', data);
+                    }
+                });
+            });
+
+            // Function to reset fields
+            function ResetFields() {
+                $("#txtName").val("");
+                $("#imgViewer").attr("src", "");
+            }
+        });
+    </script>

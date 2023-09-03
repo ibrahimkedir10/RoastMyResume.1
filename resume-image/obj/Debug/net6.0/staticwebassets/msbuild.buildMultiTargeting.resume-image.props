@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\resume-image.props" />
+</Project>
