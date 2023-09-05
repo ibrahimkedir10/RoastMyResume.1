@@ -20,6 +20,13 @@ namespace resume_image.Controllers
         {
             return View();
         }
+        // Add a new action to handle reading other resumes
+        public IActionResult ReadResumes()
+        {
+            // Implement logic to retrieve saved resumes and comments
+            // Use a ViewModel to pass data to the ReadResumes.cshtml view
+            return View();
+        }
 
         [HttpPost]
         public string SaveFile(FileUpload fileObj)

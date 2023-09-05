@@ -1,0 +1,33 @@
+﻿
+
+@{
+    ViewData["Title"] = "Read Other Resumes";
+}
+
+<h1>Read Other Resumes</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Resume</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var resume in Model)
+        {
+            <tr>
+                <td>@resume.Name</td>
+                <td>@resume.Email</td>
+                <td>
+                    <!-- Display the resume here -->
+                    <a href="@Url.Action("DownloadResume", "Home", new { id = resume.Id })">Download</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Back button to return to the home page -->
+<a href="/Home/Index">Back to Home</a>

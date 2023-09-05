@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+7JEZR2pSFTibg6w376Fpf7mQMWkiFnt5xA315/upfw=",
+  "Hash": "9V4nlFVygxlS/8mct1PURN2gRsaffze2QVLwaE9kFV8=",
   "Source": "resume-image",
   "BasePath": "_content/resume-image",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\ibrahim kedir\\Documents\\ALL CODE\\GitPost\\RoastMyResume\\resume-image\\wwwroot\\images\\resume-background.jpg",
+      "SourceId": "resume-image",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ibrahim kedir\\Documents\\ALL CODE\\GitPost\\RoastMyResume\\resume-image\\wwwroot\\",
+      "BasePath": "_content/resume-image",
+      "RelativePath": "images/resume-background.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\resume-background.jpg"
     },
     {
       "Identity": "C:\\Users\\ibrahim kedir\\Documents\\ALL CODE\\GitPost\\RoastMyResume\\resume-image\\wwwroot\\jquery\\jquery.min.js",

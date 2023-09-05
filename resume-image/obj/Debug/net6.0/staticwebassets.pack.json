@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\ibrahim kedir\\Documents\\ALL CODE\\GitPost\\RoastMyResume\\resume-image\\wwwroot\\images\\resume-background.jpg",
+      "PackagePath": "staticwebassets\\images\\resume-background.jpg"
+    },
+    {
       "Id": "C:\\Users\\ibrahim kedir\\Documents\\ALL CODE\\GitPost\\RoastMyResume\\resume-image\\wwwroot\\jquery\\jquery.min.js",
       "PackagePath": "staticwebassets\\jquery\\jquery.min.js"
     },

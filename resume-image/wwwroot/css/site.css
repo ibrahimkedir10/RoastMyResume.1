@@ -7,12 +7,32 @@ html {
     font-size: 16px;
   }
 }
-
-html {
-  position: relative;
-  min-height: 100%;
+/* Reset default margin and padding for the whole page */
+body, html {
+    margin: 0;
+    padding: 0;
 }
 
-body {
-  margin-bottom: 60px;
+/* Create a flex container to center the content vertically */
+.container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Make the container fill the viewport height */
+    background-color: aliceblue; /* Background color for the whole page */
+}
+
+/* Style the content div */
+.content {
+    /* Add your content styles here */
+    text-align: center; /* Center the content horizontally */
+}
+
+/* Style the image box */
+.image-box {
+    /* Add your image box styles here */
+    background-image: url('../images/resume-background.jpg'); /* Adjust the image path */
+    background-size: cover; /* Adjust as needed */
+    width: 200px; /* Set the width of the image box */
+    height: 200px; /* Set the height of the image box */
 }

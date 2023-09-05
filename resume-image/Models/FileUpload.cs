@@ -2,9 +2,7 @@
 {
     public class FileUpload
     {
-
-        public IFormFile file { get; set; }
-
-        public string User { get; set; }
+        public IFormFile file { get; set; } // Add this property
+        public string User { get; set; }    // Add this property
     }
 }

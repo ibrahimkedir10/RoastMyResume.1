@@ -8,11 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddControllersWithViews().AddJsonOptions(options =>
-{
-    options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
-    options.JsonSerializerOptions.PropertyNamingPolicy = null;
-});
+builder.Services.AddControllersWithViews()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+        options.JsonSerializerOptions.PropertyNamingPolicy = null;
+    });
 
 var app = builder.Build();
 
@@ -27,10 +28,16 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
+
+app.UseStaticFiles(); // Add this to enable serving static files (CSS, JavaScript, etc.).
+
+
+app.MapControllerRoute(
+    name: "read_other_resumes",
+    pattern: "Home/ReadOtherResumes",
+    defaults: new { controller = "Home", action = "ReadOtherResumes" });
 
 app.MapControllerRoute(
     name: "default",
